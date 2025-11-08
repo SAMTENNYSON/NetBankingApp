@@ -361,7 +361,7 @@ Contributions are welcome! Please follow these steps:
 
 ## 📄 License
 
-This project is part of an academic assignment (A2-PJT Android Programming, 7th Semester).
+This project is part of an academic assignment.
 
 ## 👨‍💻 Author
 
