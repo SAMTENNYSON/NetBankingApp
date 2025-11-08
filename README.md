@@ -123,6 +123,7 @@ NetBankingApp/
 │   │   └── build.gradle.kts
 ├── build.gradle.kts
 ├── settings.gradle.kts
+|-- netbanking.sql
 └── README.md
 ```
 
