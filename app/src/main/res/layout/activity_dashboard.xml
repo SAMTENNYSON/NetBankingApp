@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/primary_blue"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Account Balance"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_white"
+                        android:alpha="0.9"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/tvBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹0.00"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_white" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/profile"
+                    android:contentDescription="Profile"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="8dp"
+                    app:tint="@color/text_white" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Quick Actions Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="@color/surface_color"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quick Actions"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="20dp" />
+
+                <!-- First Row: 2 Main Actions -->
+                <LinearLayout
+                    android:id="@+id/layoutIcons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp">
+
+                    <!-- Transactions -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layoutTransactions"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardElevation="3dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/surface_color"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/divider"
+                        android:layout_marginEnd="8dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="20dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                app:cardElevation="2dp"
+                                app:cardCornerRadius="40dp"
+                                app:cardBackgroundColor="@color/secondary_teal_light"
+                                android:layout_marginBottom="12dp">
+
+                                <ImageView
+                                    android:id="@+id/ivTransactions"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/trans_hist"
+                                    android:contentDescription="View Transactions"
+                                    android:padding="20dp"
+                                    app:tint="@color/text_white" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Transactions"
+                                android:textSize="15sp"
+                                android:textColor="@color/text_primary"
+                                android:textStyle="bold"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Fund Transfer -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layoutTransfer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardElevation="3dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/surface_color"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/divider"
+                        android:layout_marginStart="8dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="20dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                app:cardElevation="2dp"
+                                app:cardCornerRadius="40dp"
+                                app:cardBackgroundColor="@color/primary_blue_light"
+                                android:layout_marginBottom="12dp">
+
+                                <ImageView
+                                    android:id="@+id/ivTransfer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/fund_transfer"
+                                    android:contentDescription="Fund Transfer"
+                                    android:padding="20dp"
+                                    app:tint="@color/text_white" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Fund Transfer"
+                                android:textSize="15sp"
+                                android:textColor="@color/text_primary"
+                                android:textStyle="bold"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <!-- Second Row: 3 Actions -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <!-- QR Code Payment -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layoutQRPayment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardElevation="3dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/surface_color"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/divider"
+                        android:layout_marginEnd="6dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="16dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                app:cardElevation="2dp"
+                                app:cardCornerRadius="32dp"
+                                app:cardBackgroundColor="@color/accent_green"
+                                android:layout_marginBottom="10dp">
+
+                                <ImageView
+                                    android:id="@+id/ivQRPayment"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/qr"
+                                    android:contentDescription="QR Code Payment"
+                                    android:padding="16dp"
+                                    app:tint="@color/text_white" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="QR Payment"
+                                android:textSize="13sp"
+                                android:textColor="@color/text_primary"
+                                android:textStyle="bold"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Transaction Insights -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layoutInsights"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardElevation="3dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/surface_color"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/divider"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="16dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                app:cardElevation="2dp"
+                                app:cardCornerRadius="32dp"
+                                app:cardBackgroundColor="@color/secondary_teal"
+                                android:layout_marginBottom="10dp">
+
+                                <ImageView
+                                    android:id="@+id/ivInsights"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/insight"
+                                    android:contentDescription="Transaction Insights"
+                                    android:padding="16dp"
+                                    app:tint="@color/text_white" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Insights"
+                                android:textSize="13sp"
+                                android:textColor="@color/text_primary"
+                                android:textStyle="bold"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- EMI Calculator -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layoutEMICalculator"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardElevation="3dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/surface_color"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/divider"
+                        android:layout_marginStart="6dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="16dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                app:cardElevation="2dp"
+                                app:cardCornerRadius="32dp"
+                                app:cardBackgroundColor="@color/accent_orange"
+                                android:layout_marginBottom="10dp">
+
+                                <ImageView
+                                    android:id="@+id/ivEMICalculator"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/calc"
+                                    android:contentDescription="EMI Calculator"
+                                    android:padding="16dp"
+                                    app:tint="@color/text_white" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="EMI Calc"
+                                android:textSize="13sp"
+                                android:textColor="@color/text_primary"
+                                android:textStyle="bold"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Settings Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="@color/surface_color"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Account Settings"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Change Password Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnChangePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Change Password"
+                    android:textSize="16sp"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/primary_blue"
+                    app:strokeWidth="2dp"
+                    app:backgroundTint="@android:color/transparent"
+                    android:textColor="@color/primary_blue"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Change TPIN Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnChangeTpin"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Change Transaction PIN"
+                    android:textSize="16sp"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/primary_blue"
+                    app:strokeWidth="2dp"
+                    app:backgroundTint="@android:color/transparent"
+                    android:textColor="@color/primary_blue" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

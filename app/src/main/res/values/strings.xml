@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NetBankingApp</string>
+    <string-array name="countries">
+        <item>India</item>
+        <item>United States</item>
+        <item>United Kingdom</item>
+        <item>Canada</item>
+        <item>Australia</item>
+    </string-array>
+</resources>
